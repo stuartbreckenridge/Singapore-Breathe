@@ -45,6 +45,7 @@
 		17F701A8259733F400DBC2B2 /* Singapore BreatheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Singapore BreatheUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_BreatheUITests.swift; sourceTree = "<group>"; };
 		17F701AE259733F400DBC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F701C12597360500DBC2B2 /* APINotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = APINotes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		17F70183259733F300DBC2B2 = {
 			isa = PBXGroup;
 			children = (
+				17F701C0259735ED00DBC2B2 /* Notes */,
 				17F7018E259733F300DBC2B2 /* Singapore Breathe */,
 				17F701A0259733F400DBC2B2 /* Singapore BreatheTests */,
 				17F701AB259733F400DBC2B2 /* Singapore BreatheUITests */,
@@ -128,6 +130,14 @@
 				17F701AE259733F400DBC2B2 /* Info.plist */,
 			);
 			path = "Singapore BreatheUITests";
+			sourceTree = "<group>";
+		};
+		17F701C0259735ED00DBC2B2 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				17F701C12597360500DBC2B2 /* APINotes.md */,
+			);
+			path = Notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
