@@ -13,6 +13,8 @@
 		17F70197259733F400DBC2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70196259733F400DBC2B2 /* Preview Assets.xcassets */; };
 		17F701A2259733F400DBC2B2 /* Singapore_BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701A1259733F400DBC2B2 /* Singapore_BreatheTests.swift */; };
 		17F701AD259733F400DBC2B2 /* Singapore_BreatheUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */; };
+		17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701C3259737BA00DBC2B2 /* PSIModel.swift */; };
+		17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701CE2597384600DBC2B2 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_BreatheUITests.swift; sourceTree = "<group>"; };
 		17F701AE259733F400DBC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F701C12597360500DBC2B2 /* APINotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = APINotes.md; sourceTree = "<group>"; };
+		17F701C3259737BA00DBC2B2 /* PSIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
+		17F701CE2597384600DBC2B2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		17F7018E259733F300DBC2B2 /* Singapore Breathe */ = {
 			isa = PBXGroup;
 			children = (
+				17F701C2259736F900DBC2B2 /* API */,
 				17F7018F259733F300DBC2B2 /* Singapore_BreatheApp.swift */,
 				17F70191259733F300DBC2B2 /* ContentView.swift */,
 				17F70193259733F400DBC2B2 /* Assets.xcassets */,
@@ -138,6 +143,15 @@
 				17F701C12597360500DBC2B2 /* APINotes.md */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		17F701C2259736F900DBC2B2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				17F701C3259737BA00DBC2B2 /* PSIModel.swift */,
+				17F701CE2597384600DBC2B2 /* Endpoints.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F70192259733F300DBC2B2 /* ContentView.swift in Sources */,
+				17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */,
+				17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */,
 				17F70190259733F300DBC2B2 /* Singapore_BreatheApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,9 +18,27 @@ class Singapore_BreatheTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPSIDownload() {
+        let expectation = XCTestExpectation(description: "TestPSIDownload")
+        let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.psi.url), completionHandler: { data, response, error in
+            guard let receivedData = data else {
+                XCTFail("No Data")
+                return
+            }
+            
+            do {
+                let psi = try JSONDecoder().decode(PSI.self, from: receivedData)
+                print(psi)
+                expectation.fulfill()
+            } catch {
+                print(error)
+                XCTFail(error.localizedDescription)
+                return
+            }
+            
+        })
+        task.resume()
+        wait(for: [expectation], timeout: 5)
     }
 
     func testPerformanceExample() throws {
