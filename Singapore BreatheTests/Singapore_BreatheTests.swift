@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Combine
 @testable import Singapore_Breathe
 
 class Singapore_BreatheTests: XCTestCase {
@@ -28,7 +29,8 @@ class Singapore_BreatheTests: XCTestCase {
             
             do {
                 let psi = try JSONDecoder().decode(PSI.self, from: receivedData)
-                print(psi)
+                //print(psi)
+                print(psi[dynamicMember:"north"])
                 expectation.fulfill()
             } catch {
                 print(error)
@@ -61,6 +63,24 @@ class Singapore_BreatheTests: XCTestCase {
             
         })
         task.resume()
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testCombinedData() {
+        
+        var bag = Set<AnyCancellable>()
+        let expectation = XCTestExpectation(description: "Testing Combined Model")
+        
+        let _ = NEAInteractor
+            .shared
+            .combinedPublisher
+            .sink { (error) in
+                XCTFail("I shouldn't fail here.")
+            } receiveValue: { (airQuality) in
+                expectation.fulfill()
+            }.store(in: &bag)
+
+        NEAInteractor.shared.getLatestMetadataReading()
         wait(for: [expectation], timeout: 5)
     }
 

@@ -59,6 +59,7 @@ public struct Readings: Codable {
 }
 
 // MARK: - Pm25OneHourly
+@dynamicMemberLookup
 public struct Pm25OneHourly: Codable {
     public let west: Int
     public let east: Int
@@ -81,4 +82,23 @@ public struct Pm25OneHourly: Codable {
         self.south = south
         self.north = north
     }
+    
+    subscript(dynamicMember member: String) -> Int {
+        switch member {
+        case "north":
+            return north
+        case "east":
+            return east
+        case "south":
+            return south
+        case "west":
+            return west
+        case "central":
+            return central
+        default:
+            return 0
+        }
+    }
+    
+    
 }

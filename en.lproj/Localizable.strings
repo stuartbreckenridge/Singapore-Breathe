@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Singapore Breathe
+
+  Created by Stuart Breckenridge on 26/12/2020.
+  
+*/
+
+"API_ERROR_TITLE" = "API Error";
+"API_ERROR_NO_DATA" = "No data was returned by the API. Please try later.";
+"API_ERROR_OTHER" = "There was an error retrieving update air quality data. %@";

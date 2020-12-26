@@ -9,6 +9,7 @@ import Foundation
 
 
 // MARK: - PSI
+@dynamicMemberLookup
 public struct PSI: Codable {
     public let regionMetadata: [RegionMetadatum]
     public let items: [PSIItem]
@@ -24,6 +25,25 @@ public struct PSI: Codable {
         self.regionMetadata = regionMetadata
         self.items = items
         self.apiInfo = apiInfo
+    }
+    
+    subscript(dynamicMember member: String) -> Double {
+        switch member {
+        case "north":
+            return items.first?.readings["psi_twenty_four_hourly"]?.north ?? 0.0
+        case "east":
+            return items.first?.readings["psi_twenty_four_hourly"]?.east ?? 0.0
+        case "south":
+            return items.first?.readings["psi_twenty_four_hourly"]?.south ?? 0.0
+        case "west":
+            return items.first?.readings["psi_twenty_four_hourly"]?.west ?? 0.0
+        case "central":
+            return items.first?.readings["psi_twenty_four_hourly"]?.central ?? 0.0
+        case "national":
+            return items.first?.readings["psi_twenty_four_hourly"]?.national ?? 0.0
+        default:
+            return 0.0
+        }
     }
 }
 
@@ -57,6 +77,8 @@ public struct PSIItem: Codable {
         self.updateTimestamp = updateTimestamp
         self.readings = readings
     }
+    
+    
 }
 
 // MARK: - Reading

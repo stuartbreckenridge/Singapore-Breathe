@@ -16,6 +16,11 @@
 		17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701C3259737BA00DBC2B2 /* PSIModel.swift */; };
 		17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701CE2597384600DBC2B2 /* Endpoints.swift */; };
 		17F701D425973C2C00DBC2B2 /* PM25Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701D325973C2C00DBC2B2 /* PM25Model.swift */; };
+		17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */; };
+		17F701E125976F2A00DBC2B2 /* AirQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701E025976F2A00DBC2B2 /* AirQualityModel.swift */; };
+		17F701F12597764200DBC2B2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701F02597764200DBC2B2 /* APIError.swift */; };
+		17F7020C2597778300DBC2B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F7020E2597778300DBC2B2 /* Localizable.strings */; };
+		17F70228259778E500DBC2B2 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70227259778E500DBC2B2 /* Localized.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,12 @@
 		17F701C3259737BA00DBC2B2 /* PSIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
 		17F701CE2597384600DBC2B2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		17F701D325973C2C00DBC2B2 /* PM25Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM25Model.swift; sourceTree = "<group>"; };
+		17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEAInteractor.swift; sourceTree = "<group>"; };
+		17F701E025976F2A00DBC2B2 /* AirQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
+		17F701F02597764200DBC2B2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		17F7020D2597778300DBC2B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		17F70227259778E500DBC2B2 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		17F7023E2597957400DBC2B2 /* LocalizationNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LocalizationNotes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +93,8 @@
 		17F70183259733F300DBC2B2 = {
 			isa = PBXGroup;
 			children = (
+				17F702192597786200DBC2B2 /* Localizations */,
+				17F70226259778CE00DBC2B2 /* Generated */,
 				17F701C0259735ED00DBC2B2 /* Notes */,
 				17F7018E259733F300DBC2B2 /* Singapore Breathe */,
 				17F701A0259733F400DBC2B2 /* Singapore BreatheTests */,
@@ -143,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				17F701C12597360500DBC2B2 /* APINotes.md */,
+				17F7023E2597957400DBC2B2 /* LocalizationNotes.md */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -150,11 +164,46 @@
 		17F701C2259736F900DBC2B2 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				17F701C3259737BA00DBC2B2 /* PSIModel.swift */,
-				17F701D325973C2C00DBC2B2 /* PM25Model.swift */,
-				17F701CE2597384600DBC2B2 /* Endpoints.swift */,
+				17F701EC2597763000DBC2B2 /* Enums */,
+				17F701E82597762700DBC2B2 /* Models */,
+				17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		17F701E82597762700DBC2B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17F701C3259737BA00DBC2B2 /* PSIModel.swift */,
+				17F701D325973C2C00DBC2B2 /* PM25Model.swift */,
+				17F701E025976F2A00DBC2B2 /* AirQualityModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17F701EC2597763000DBC2B2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				17F701F02597764200DBC2B2 /* APIError.swift */,
+				17F701CE2597384600DBC2B2 /* Endpoints.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		17F702192597786200DBC2B2 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				17F7020E2597778300DBC2B2 /* Localizable.strings */,
+			);
+			name = Localizations;
+			sourceTree = "<group>";
+		};
+		17F70226259778CE00DBC2B2 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				17F70227259778E500DBC2B2 /* Localized.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +216,7 @@
 				17F70188259733F300DBC2B2 /* Sources */,
 				17F70189259733F300DBC2B2 /* Frameworks */,
 				17F7018A259733F300DBC2B2 /* Resources */,
+				17F702172597780800DBC2B2 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -261,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F70197259733F400DBC2B2 /* Preview Assets.xcassets in Resources */,
+				17F7020C2597778300DBC2B2 /* Localizable.strings in Resources */,
 				17F70194259733F400DBC2B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,16 +332,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17F702172597780800DBC2B2 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if ! command -v swiftgen &> /dev/null\nthen\n    echo \"swiftgen could not be found\"\n    exit\nfi\n\nswiftgen run strings -t structured-swift5 \"$PROJECT_DIR/en.lproj/Localizable.strings\" --output \"$PROJECT_DIR/Generated/Localized.swift\" --param enumName=L10N;\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		17F70188259733F300DBC2B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				17F701D425973C2C00DBC2B2 /* PM25Model.swift in Sources */,
+				17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */,
 				17F70192259733F300DBC2B2 /* ContentView.swift in Sources */,
 				17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */,
+				17F70228259778E500DBC2B2 /* Localized.swift in Sources */,
 				17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */,
+				17F701F12597764200DBC2B2 /* APIError.swift in Sources */,
 				17F70190259733F300DBC2B2 /* Singapore_BreatheApp.swift in Sources */,
+				17F701E125976F2A00DBC2B2 /* AirQualityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +400,17 @@
 			targetProxy = 17F701A9259733F400DBC2B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		17F7020E2597778300DBC2B2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17F7020D2597778300DBC2B2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		17F701AF259733F400DBC2B2 /* Debug */ = {
