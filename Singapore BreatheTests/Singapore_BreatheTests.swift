@@ -40,6 +40,29 @@ class Singapore_BreatheTests: XCTestCase {
         task.resume()
         wait(for: [expectation], timeout: 5)
     }
+    
+    func testPM25Download() {
+        let expectation = XCTestExpectation(description: "TestPM25Download")
+        let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.pm25.url), completionHandler: { data, response, error in
+            guard let receivedData = data else {
+                XCTFail("No Data")
+                return
+            }
+            
+            do {
+                let pm25 = try JSONDecoder().decode(PM25.self, from: receivedData)
+                print(pm25)
+                expectation.fulfill()
+            } catch {
+                print(error)
+                XCTFail(error.localizedDescription)
+                return
+            }
+            
+        })
+        task.resume()
+        wait(for: [expectation], timeout: 5)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
