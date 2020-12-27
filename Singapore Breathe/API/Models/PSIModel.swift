@@ -33,11 +33,6 @@ public struct APIInfo: Codable {
     public let status: String
     public let message: String?
 
-    enum CodingKeys: String, CodingKey {
-        case status = "status"
-        case message = "message"
-    }
-
     public init(status: String, message: String?) {
         self.status = status
         self.message = message

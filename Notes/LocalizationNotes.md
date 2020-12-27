@@ -1,4 +1,4 @@
-#  Localization
+# Localization
 
 Localization is handled by [SwiftGen](https://github.com/SwiftGen/SwiftGen).  
 

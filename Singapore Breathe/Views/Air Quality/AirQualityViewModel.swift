@@ -10,7 +10,7 @@ import Combine
 
 public final class AirQualityViewModel: ObservableObject {
     
-    public let api = NEAInteractor.shared
+    public let api = APIInteractor.shared
     @Published public private(set) var apiError: Error? {
         didSet {
             apiError != nil ? (showError = true) : (showError = false)
@@ -37,6 +37,5 @@ public final class AirQualityViewModel: ObservableObject {
             }
             .store(in: &bag)
     }
-    
     
 }

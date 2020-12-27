@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17F70190259733F300DBC2B2 /* Singapore_BreatheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7018F259733F300DBC2B2 /* Singapore_BreatheApp.swift */; };
+		17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */; };
 		17F70192259733F300DBC2B2 /* AirQualityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70191259733F300DBC2B2 /* AirQualityListView.swift */; };
 		17F70194259733F400DBC2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70193259733F400DBC2B2 /* Assets.xcassets */; };
 		17F70197259733F400DBC2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70196259733F400DBC2B2 /* Preview Assets.xcassets */; };
 		17F701A2259733F400DBC2B2 /* Singapore_BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701A1259733F400DBC2B2 /* Singapore_BreatheTests.swift */; };
 		17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701C3259737BA00DBC2B2 /* PSIModel.swift */; };
 		17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701CE2597384600DBC2B2 /* Endpoints.swift */; };
-		17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */; };
+		17F701DC25976E2D00DBC2B2 /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701DB25976E2D00DBC2B2 /* APIInteractor.swift */; };
 		17F701F12597764200DBC2B2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701F02597764200DBC2B2 /* APIError.swift */; };
 		17F7020C2597778300DBC2B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F7020E2597778300DBC2B2 /* Localizable.strings */; };
 		17F70228259778E500DBC2B2 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70227259778E500DBC2B2 /* Localized.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		17345C4F2598233C0088F464 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		17F7018C259733F300DBC2B2 /* Singapore Breathe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Singapore Breathe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17F7018F259733F300DBC2B2 /* Singapore_BreatheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_BreatheApp.swift; sourceTree = "<group>"; };
+		17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingaporeBreatheApp.swift; sourceTree = "<group>"; };
 		17F70191259733F300DBC2B2 /* AirQualityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityListView.swift; sourceTree = "<group>"; };
 		17F70193259733F400DBC2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F70196259733F400DBC2B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		17F701C12597360500DBC2B2 /* APINotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = APINotes.md; sourceTree = "<group>"; };
 		17F701C3259737BA00DBC2B2 /* PSIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
 		17F701CE2597384600DBC2B2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEAInteractor.swift; sourceTree = "<group>"; };
+		17F701DB25976E2D00DBC2B2 /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
 		17F701F02597764200DBC2B2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		17F7020D2597778300DBC2B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		17F70227259778E500DBC2B2 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		17F7018E259733F300DBC2B2 /* Singapore Breathe */ = {
 			isa = PBXGroup;
 			children = (
-				17F7018F259733F300DBC2B2 /* Singapore_BreatheApp.swift */,
+				17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */,
 				17F701C2259736F900DBC2B2 /* API */,
 				17F702432597F0CB00DBC2B2 /* Views */,
 				17F70193259733F400DBC2B2 /* Assets.xcassets */,
@@ -180,7 +180,7 @@
 		17F7023F2597F07F00DBC2B2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */,
+				17F701DB25976E2D00DBC2B2 /* APIInteractor.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */,
+				17F701DC25976E2D00DBC2B2 /* APIInteractor.swift in Sources */,
 				17F70192259733F300DBC2B2 /* AirQualityListView.swift in Sources */,
 				17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */,
 				17F70228259778E500DBC2B2 /* Localized.swift in Sources */,
@@ -333,7 +333,7 @@
 				17F702542597F20500DBC2B2 /* AirQualityItemView.swift in Sources */,
 				17F701F12597764200DBC2B2 /* APIError.swift in Sources */,
 				17F7024F2597F10600DBC2B2 /* AirQualityViewModel.swift in Sources */,
-				17F70190259733F300DBC2B2 /* Singapore_BreatheApp.swift in Sources */,
+				17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

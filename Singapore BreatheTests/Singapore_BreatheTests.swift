@@ -23,7 +23,7 @@ class Singapore_BreatheTests: XCTestCase {
         let expectation = XCTestExpectation(description: "TestPSIDownload")
         
         var comps = URLComponents(url: Endpoints.psi.url, resolvingAgainstBaseURL: false)
-        comps?.queryItems = [URLQueryItem(name: "date_time", value: NEAInteractor.shared.currentDateTime())]
+        comps?.queryItems = [URLQueryItem(name: "date_time", value: APIInteractor.shared.currentDateTime())]
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: comps!.url!), completionHandler: { data, response, error in
             guard let receivedData = data else {
@@ -47,7 +47,7 @@ class Singapore_BreatheTests: XCTestCase {
     func testPM25Download() {
         let expectation = XCTestExpectation(description: "TestPM25Download")
         var comps = URLComponents(url: Endpoints.pm25.url, resolvingAgainstBaseURL: false)
-        comps?.queryItems = [URLQueryItem(name: "date_time", value: NEAInteractor.shared.currentDateTime())]
+        comps?.queryItems = [URLQueryItem(name: "date_time", value: APIInteractor.shared.currentDateTime())]
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.pm25.url), completionHandler: { data, response, error in
             guard let receivedData = data else {
@@ -75,7 +75,7 @@ class Singapore_BreatheTests: XCTestCase {
         var bag = Set<AnyCancellable>()
         let expectation = XCTestExpectation(description: "Testing Combined Model")
         
-        let _ = NEAInteractor
+        _ = APIInteractor
             .shared
             .combinedPublisher
             .sink { (error) in
@@ -84,7 +84,7 @@ class Singapore_BreatheTests: XCTestCase {
                 expectation.fulfill()
             }.store(in: &bag)
 
-        NEAInteractor.shared.getLatestMetadataReading()
+        APIInteractor.shared.getLatestMetadataReading()
         wait(for: [expectation], timeout: 5)
     }
 

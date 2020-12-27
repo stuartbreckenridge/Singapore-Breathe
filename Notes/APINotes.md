@@ -234,7 +234,6 @@ Response
 }
 ```
 
-
 ## PSI Bands
 
 - Good (0 - 50)
