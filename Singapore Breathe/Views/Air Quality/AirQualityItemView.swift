@@ -26,6 +26,6 @@ struct AirQualityItemView: View {
 
 struct AirQualityItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AirQualityItemView(latestPSI: PSI(regionMetadata: [RegionMetadatum(name: "west", labelLocation: LabelLocation(latitude: 1.35735, longitude: 103.7))], items: [PSIItem(timestamp: "2020", updateTimestamp: "2020", readings: ["Sample" : Reading(west: 0, east: 0, central: 0, south: 0, north: 0)])], apiInfo: APIInfo(status: "Healthy", message: nil)))
+        AirQualityItemView(latestPSI: PSI(regionMetadata: [RegionMetadatum(name: "west", labelLocation: LabelLocation(latitude: 1.35735, longitude: 103.7))], items: [PSIItem(timestamp: "2020", updateTimestamp: "2020", readings: ["Sample" : Reading(west: 0, national: nil, east: 0, central: 0, south: 0, north: 0)])], apiInfo: APIInfo(status: "Healthy", message: nil)))
     }
 }

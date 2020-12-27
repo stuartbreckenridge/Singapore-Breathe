@@ -82,8 +82,12 @@ public final class NEAInteractor: ObservableObject {
     
     private func combineLatestData(_ psi: PSI, pm25: PSI) {
         var combinedPSI = psi
-        combinedPSI.items.insert(pm25.items.first!, at: combinedPSI.items.count)
+        guard let pm25Reading = pm25.items.first else {
+            return
+        }
+        combinedPSI.items.insert(pm25Reading, at: combinedPSI.items.count)
         combinedPublisher.send(combinedPSI)
+        
     }
     
     public func currentDateTime() -> String {

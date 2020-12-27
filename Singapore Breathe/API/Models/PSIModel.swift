@@ -46,9 +46,9 @@ public struct APIInfo: Codable {
 
 // MARK: - PSIItem
 public struct PSIItem: Codable {
-    public let timestamp: String
-    public let updateTimestamp: String
-    public var readings: [String: Reading]
+    public let timestamp: String?
+    public let updateTimestamp: String?
+    public var readings: [String: Reading]?
 
     enum CodingKeys: String, CodingKey {
         case timestamp = "timestamp"
@@ -56,7 +56,7 @@ public struct PSIItem: Codable {
         case readings = "readings"
     }
 
-    public init(timestamp: String, updateTimestamp: String, readings: [String: Reading]) {
+    public init(timestamp: String?, updateTimestamp: String?, readings: [String: Reading]?) {
         self.timestamp = timestamp
         self.updateTimestamp = updateTimestamp
         self.readings = readings
@@ -64,19 +64,19 @@ public struct PSIItem: Codable {
     
     public mutating func addReadings(_ newReadings: [String: Reading]) {
         _ = newReadings.map { key, value in
-            readings[key] = value
+            readings?[key] = value
         }
     }
 }
 
 // MARK: - Reading
 public struct Reading: Codable {
-    public let west: Double
+    public let west: Double?
     public let national: Double?
-    public let east: Double
-    public let central: Double
-    public let south: Double
-    public let north: Double
+    public let east: Double?
+    public let central: Double?
+    public let south: Double?
+    public let north: Double?
 
     enum CodingKeys: String, CodingKey {
         case west = "west"
@@ -87,7 +87,7 @@ public struct Reading: Codable {
         case north = "north"
     }
 
-    public init(west: Double, national: Double? = nil, east: Double, central: Double, south: Double, north: Double) {
+    public init(west: Double?, national: Double?, east: Double?, central: Double?, south: Double?, north: Double?) {
         self.west = west
         self.national = national
         self.east = east
@@ -99,15 +99,15 @@ public struct Reading: Codable {
 
 // MARK: - RegionMetadatum (Shared between models)
 public struct RegionMetadatum: Codable {
-    public let name: String
-    public let labelLocation: LabelLocation
+    public let name: String?
+    public let labelLocation: LabelLocation?
 
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case labelLocation = "label_location"
     }
 
-    public init(name: String, labelLocation: LabelLocation) {
+    public init(name: String?, labelLocation: LabelLocation?) {
         self.name = name
         self.labelLocation = labelLocation
     }
