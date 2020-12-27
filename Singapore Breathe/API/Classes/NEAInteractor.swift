@@ -10,13 +10,13 @@ import Combine
 
 public final class NEAInteractor: ObservableObject {
     
-    @Published public var combinedPublisher = PassthroughSubject<AirQuality, Error>()
+    @Published public var combinedPublisher = PassthroughSubject<PSI, Error>()
     
     public static let shared = NEAInteractor()
     private init () {}
     
     public func getLatestMetadataReading() {
-        var latestPM25: PM25!
+        var latestPM25: PSI!
         var latestPSI: PSI!
         
         getLatestPSI { [weak self] (psi, error) in
@@ -39,7 +39,10 @@ public final class NEAInteractor: ObservableObject {
     }
     
     private func getLatestPSI(completion: @escaping (PSI?, Error?) -> ()) {
-        let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.psi.url), completionHandler: { data, response, error in
+        var comps = URLComponents(url: Endpoints.psi.url, resolvingAgainstBaseURL: false)
+        comps?.queryItems = [URLQueryItem(name: "date_time", value: currentDateTime())]
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: comps!.url!), completionHandler: { data, response, error in
             guard let receivedData = data else {
                 completion(nil, APIError.noData)
                 return
@@ -56,14 +59,17 @@ public final class NEAInteractor: ObservableObject {
         task.resume()
     }
     
-    private func getLatestPM25(completion: @escaping (PM25?, Error?) -> ()) {
-        let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.pm25.url), completionHandler: { data, response, error in
+    private func getLatestPM25(completion: @escaping (PSI?, Error?) -> ()) {
+        var comps = URLComponents(url: Endpoints.pm25.url, resolvingAgainstBaseURL: false)
+        comps?.queryItems = [URLQueryItem(name: "date_time", value: currentDateTime())]
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: comps!.url!), completionHandler: { data, response, error in
             guard let receivedData = data else {
                 completion(nil, APIError.noData)
                 return
             }
             do {
-                let pm25 = try JSONDecoder().decode(PM25.self, from: receivedData)
+                let pm25 = try JSONDecoder().decode(PSI.self, from: receivedData)
                 completion(pm25, nil)
             } catch {
                 completion(nil, APIError.other(error))
@@ -74,19 +80,20 @@ public final class NEAInteractor: ObservableObject {
         task.resume()
     }
     
-    private func combineLatestData(_ psi: PSI, pm25: PM25) {
-        let regions = ["north", "east", "south", "west", "central", "national"]
-        let combinedMetadata = regions.map { region in
-            CombinedRegionMetadatum(name: region.capitalized,
-                                    location: psi.regionMetadata.filter { $0.name == region }.first!.labelLocation,
-                                    pm25Hourly: pm25.items.map { $0.readings.pm25OneHourly[dynamicMember: region] }.first ?? 0 ,
-                                    psiHourly: psi[dynamicMember:region],
-                                    timeStamp: psi.items.map { $0.timestamp }.first ?? "",
-                                    updatedTimeStamp: psi.items.map { $0.updateTimestamp }.first ?? "")
-        }
-        combinedPublisher.send(AirQuality(combinedRegionMetadatum: combinedMetadata))
+    private func combineLatestData(_ psi: PSI, pm25: PSI) {
+        var combinedPSI = psi
+        combinedPSI.items.insert(pm25.items.first!, at: combinedPSI.items.count)
+        combinedPublisher.send(combinedPSI)
     }
     
-    
+    public func currentDateTime() -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "SGT")
+        
+        return dateFormatter.string(from: Date())
+        
+    }
     
 }

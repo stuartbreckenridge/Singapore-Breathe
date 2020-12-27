@@ -11,8 +11,13 @@ import Combine
 public final class AirQualityViewModel: ObservableObject {
     
     public let api = NEAInteractor.shared
-    @Published public private(set) var apiError: Error?
-    @Published public private(set) var airQuality: AirQuality = AirQuality(combinedRegionMetadatum: [])
+    @Published public private(set) var apiError: Error? {
+        didSet {
+            apiError != nil ? (showError = true) : (showError = false)
+        }
+    }
+    @Published public private(set) var latestPSI: PSI?
+    @Published public var showError: Bool = false
     
     private var bag = Set<AnyCancellable>()
     
@@ -27,8 +32,8 @@ public final class AirQualityViewModel: ObservableObject {
                 case .finished:
                     print("Finished")
                 }
-            } receiveValue: { (airQuality) in
-                self.airQuality = airQuality
+            } receiveValue: { (psi) in
+                self.latestPSI = psi
             }
             .store(in: &bag)
     }

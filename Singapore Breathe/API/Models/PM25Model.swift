@@ -10,7 +10,7 @@ import Foundation
 // MARK: - PM25
 public struct PM25: Codable {
     public let regionMetadata: [RegionMetadatum]
-    public let items: [PM25Item]
+    public let items: [PSIItem]
     public let apiInfo: APIInfo
 
     enum CodingKeys: String, CodingKey {
@@ -19,7 +19,7 @@ public struct PM25: Codable {
         case apiInfo = "api_info"
     }
 
-    public init(regionMetadata: [RegionMetadatum], items: [PM25Item], apiInfo: APIInfo) {
+    public init(regionMetadata: [RegionMetadatum], items: [PSIItem], apiInfo: APIInfo) {
         self.regionMetadata = regionMetadata
         self.items = items
         self.apiInfo = apiInfo
@@ -59,7 +59,6 @@ public struct Readings: Codable {
 }
 
 // MARK: - Pm25OneHourly
-@dynamicMemberLookup
 public struct Pm25OneHourly: Codable {
     public let west: Int
     public let east: Int
@@ -82,23 +81,4 @@ public struct Pm25OneHourly: Codable {
         self.south = south
         self.north = north
     }
-    
-    subscript(dynamicMember member: String) -> Int {
-        switch member {
-        case "north":
-            return north
-        case "east":
-            return east
-        case "south":
-            return south
-        case "west":
-            return west
-        case "central":
-            return central
-        default:
-            return 0
-        }
-    }
-    
-    
 }

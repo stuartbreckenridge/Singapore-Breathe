@@ -9,10 +9,9 @@ import Foundation
 
 
 // MARK: - PSI
-@dynamicMemberLookup
 public struct PSI: Codable {
     public let regionMetadata: [RegionMetadatum]
-    public let items: [PSIItem]
+    public var items: [PSIItem]
     public let apiInfo: APIInfo
 
     enum CodingKeys: String, CodingKey {
@@ -26,37 +25,22 @@ public struct PSI: Codable {
         self.items = items
         self.apiInfo = apiInfo
     }
-    
-    subscript(dynamicMember member: String) -> Int? {
-        switch member {
-        case "north":
-            return Int(items.first?.readings["psi_twenty_four_hourly"]?.north ?? 0)
-        case "east":
-            return Int(items.first?.readings["psi_twenty_four_hourly"]?.east ?? 0)
-        case "south":
-            return Int(items.first?.readings["psi_twenty_four_hourly"]?.south ?? 0)
-        case "west":
-            return Int(items.first?.readings["psi_twenty_four_hourly"]?.west ?? 0)
-        case "central":
-            return Int(items.first?.readings["psi_twenty_four_hourly"]?.central ?? 0)
-        case "national":
-            return Int(items.first?.readings["psi_twenty_four_hourly"]?.national ?? 0)
-        default:
-            return nil
-        }
-    }
+
 }
 
 // MARK: - APIInfo
 public struct APIInfo: Codable {
     public let status: String
+    public let message: String?
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
+        case message = "message"
     }
 
-    public init(status: String) {
+    public init(status: String, message: String?) {
         self.status = status
+        self.message = message
     }
 }
 
@@ -64,7 +48,7 @@ public struct APIInfo: Codable {
 public struct PSIItem: Codable {
     public let timestamp: String
     public let updateTimestamp: String
-    public let readings: [String: Reading]
+    public var readings: [String: Reading]
 
     enum CodingKeys: String, CodingKey {
         case timestamp = "timestamp"
@@ -78,13 +62,17 @@ public struct PSIItem: Codable {
         self.readings = readings
     }
     
-    
+    public mutating func addReadings(_ newReadings: [String: Reading]) {
+        _ = newReadings.map { key, value in
+            readings[key] = value
+        }
+    }
 }
 
 // MARK: - Reading
 public struct Reading: Codable {
     public let west: Double
-    public let national: Double
+    public let national: Double?
     public let east: Double
     public let central: Double
     public let south: Double
@@ -99,7 +87,7 @@ public struct Reading: Codable {
         case north = "north"
     }
 
-    public init(west: Double, national: Double, east: Double, central: Double, south: Double, north: Double) {
+    public init(west: Double, national: Double? = nil, east: Double, central: Double, south: Double, north: Double) {
         self.west = west
         self.national = national
         self.east = east

@@ -10,9 +10,11 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10N {
+  /// Dismiss
+  internal static let apiErrorDismiss = L10N.tr("Localizable", "API_ERROR_DISMISS")
   /// No data was returned by the API. Please try later.
   internal static let apiErrorNoData = L10N.tr("Localizable", "API_ERROR_NO_DATA")
-  /// There was an error retrieving update air quality data. %@
+  /// There was an error retrieving updated air quality data. %@ Please try later.
   internal static func apiErrorOther(_ p1: Any) -> String {
     return L10N.tr("Localizable", "API_ERROR_OTHER", String(describing: p1))
   }

@@ -21,19 +21,20 @@ class Singapore_BreatheTests: XCTestCase {
 
     func testPSIDownload() {
         let expectation = XCTestExpectation(description: "TestPSIDownload")
-        let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.psi.url), completionHandler: { data, response, error in
+        
+        var comps = URLComponents(url: Endpoints.psi.url, resolvingAgainstBaseURL: false)
+        comps?.queryItems = [URLQueryItem(name: "date_time", value: NEAInteractor.shared.currentDateTime())]
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: comps!.url!), completionHandler: { data, response, error in
             guard let receivedData = data else {
                 XCTFail("No Data")
                 return
             }
-            
             do {
                 let psi = try JSONDecoder().decode(PSI.self, from: receivedData)
-                //print(psi)
-                print(psi[dynamicMember:"north"])
+                print(psi)
                 expectation.fulfill()
             } catch {
-                print(error)
                 XCTFail(error.localizedDescription)
                 return
             }
@@ -45,6 +46,9 @@ class Singapore_BreatheTests: XCTestCase {
     
     func testPM25Download() {
         let expectation = XCTestExpectation(description: "TestPM25Download")
+        var comps = URLComponents(url: Endpoints.pm25.url, resolvingAgainstBaseURL: false)
+        comps?.queryItems = [URLQueryItem(name: "date_time", value: NEAInteractor.shared.currentDateTime())]
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.pm25.url), completionHandler: { data, response, error in
             guard let receivedData = data else {
                 XCTFail("No Data")
@@ -52,7 +56,7 @@ class Singapore_BreatheTests: XCTestCase {
             }
             
             do {
-                let pm25 = try JSONDecoder().decode(PM25.self, from: receivedData)
+                let pm25 = try JSONDecoder().decode(PSI.self, from: receivedData)
                 print(pm25)
                 expectation.fulfill()
             } catch {

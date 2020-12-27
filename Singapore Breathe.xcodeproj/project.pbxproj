@@ -15,9 +15,7 @@
 		17F701AD259733F400DBC2B2 /* Singapore_BreatheUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */; };
 		17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701C3259737BA00DBC2B2 /* PSIModel.swift */; };
 		17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701CE2597384600DBC2B2 /* Endpoints.swift */; };
-		17F701D425973C2C00DBC2B2 /* PM25Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701D325973C2C00DBC2B2 /* PM25Model.swift */; };
 		17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */; };
-		17F701E125976F2A00DBC2B2 /* AirQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701E025976F2A00DBC2B2 /* AirQualityModel.swift */; };
 		17F701F12597764200DBC2B2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701F02597764200DBC2B2 /* APIError.swift */; };
 		17F7020C2597778300DBC2B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F7020E2597778300DBC2B2 /* Localizable.strings */; };
 		17F70228259778E500DBC2B2 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70227259778E500DBC2B2 /* Localized.swift */; };
@@ -58,9 +56,7 @@
 		17F701C12597360500DBC2B2 /* APINotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = APINotes.md; sourceTree = "<group>"; };
 		17F701C3259737BA00DBC2B2 /* PSIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
 		17F701CE2597384600DBC2B2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		17F701D325973C2C00DBC2B2 /* PM25Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PM25Model.swift; sourceTree = "<group>"; };
 		17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEAInteractor.swift; sourceTree = "<group>"; };
-		17F701E025976F2A00DBC2B2 /* AirQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
 		17F701F02597764200DBC2B2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		17F7020D2597778300DBC2B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		17F70227259778E500DBC2B2 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				17F701C3259737BA00DBC2B2 /* PSIModel.swift */,
-				17F701D325973C2C00DBC2B2 /* PM25Model.swift */,
-				17F701E025976F2A00DBC2B2 /* AirQualityModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -388,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F701D425973C2C00DBC2B2 /* PM25Model.swift in Sources */,
 				17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */,
 				17F70192259733F300DBC2B2 /* AirQualityListView.swift in Sources */,
 				17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */,
@@ -398,7 +391,6 @@
 				17F701F12597764200DBC2B2 /* APIError.swift in Sources */,
 				17F7024F2597F10600DBC2B2 /* AirQualityViewModel.swift in Sources */,
 				17F70190259733F300DBC2B2 /* Singapore_BreatheApp.swift in Sources */,
-				17F701E125976F2A00DBC2B2 /* AirQualityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

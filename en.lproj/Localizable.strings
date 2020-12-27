@@ -8,7 +8,8 @@
 
 "API_ERROR_TITLE" = "API Error";
 "API_ERROR_NO_DATA" = "No data was returned by the API. Please try later.";
-"API_ERROR_OTHER" = "There was an error retrieving update air quality data. %@";
+"API_ERROR_OTHER" = "There was an error retrieving updated air quality data. %@ Please try later.";
+"API_ERROR_DISMISS" = "Dismiss";
 
 "PSI_SHORT" = "PSI";
 "PM_SHORT" = "PM";
