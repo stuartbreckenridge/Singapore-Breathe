@@ -49,16 +49,6 @@
                ReferencedContainer = "container:Singapore Breathe.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17F701A7259733F400DBC2B2"
-               BuildableName = "Singapore BreatheUITests.xctest"
-               BlueprintName = "Singapore BreatheUITests"
-               ReferencedContainer = "container:Singapore Breathe.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
