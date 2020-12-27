@@ -1,8 +1,8 @@
 #  Air Quality Measurements
 
 ## PSI
-- Polluntant Standards Index. Composed of PM<sub>10</sub>, PM<sub>2.5M</sub>, O<sub>3</sub>, CO, NO<sub>2</sub>, and SO<sub>2</sub>.
-  - A sub-index is calculated for each pollutant in each region and the highest value used as the PSI value for the region (e.g. _central_).
+- Polluntant Standards Index. Composed of PM<sub>10</sub>, PM<sub>2.5</sub>, O<sub>3</sub>, CO, NO<sub>2</sub>, and SO<sub>2</sub>.
+  - A sub-index is calculated for each pollutant in each region and the highest value is used as the PSI value for the region (e.g. _central_).
 - In the API: `psi_twenty_four_hourly`
 
 ## PM<sub>10</sub> 
