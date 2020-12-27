@@ -49,7 +49,7 @@ class Singapore_BreatheTests: XCTestCase {
         var comps = URLComponents(url: Endpoints.pm25.url, resolvingAgainstBaseURL: false)
         comps?.queryItems = [URLQueryItem(name: "date_time", value: APIInteractor.shared.currentDateTime())]
         
-        let task = URLSession.shared.dataTask(with: URLRequest(url: Endpoints.pm25.url), completionHandler: { data, response, error in
+        let task = URLSession.shared.dataTask(with: URLRequest(url: comps!.url!), completionHandler: { data, response, error in
             guard let receivedData = data else {
                 XCTFail("No Data")
                 return
@@ -75,7 +75,7 @@ class Singapore_BreatheTests: XCTestCase {
         var bag = Set<AnyCancellable>()
         let expectation = XCTestExpectation(description: "Testing Combined Model")
         
-        _ = APIInteractor
+        APIInteractor
             .shared
             .combinedPublisher
             .sink { (error) in
@@ -87,5 +87,6 @@ class Singapore_BreatheTests: XCTestCase {
         APIInteractor.shared.getLatestMetadataReading()
         wait(for: [expectation], timeout: 5)
     }
+    
 
 }
