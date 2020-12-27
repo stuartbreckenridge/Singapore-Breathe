@@ -89,8 +89,8 @@ public final class NEAInteractor: ObservableObject {
     public func currentDateTime() -> String {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(identifier: "SGT")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Singapore")
         
         return dateFormatter.string(from: Date())
         
