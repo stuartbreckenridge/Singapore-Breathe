@@ -12,7 +12,6 @@
 		17F70194259733F400DBC2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70193259733F400DBC2B2 /* Assets.xcassets */; };
 		17F70197259733F400DBC2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70196259733F400DBC2B2 /* Preview Assets.xcassets */; };
 		17F701A2259733F400DBC2B2 /* Singapore_BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701A1259733F400DBC2B2 /* Singapore_BreatheTests.swift */; };
-		17F701AD259733F400DBC2B2 /* Singapore_BreatheUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */; };
 		17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701C3259737BA00DBC2B2 /* PSIModel.swift */; };
 		17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701CE2597384600DBC2B2 /* Endpoints.swift */; };
 		17F701DC25976E2D00DBC2B2 /* NEAInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701DB25976E2D00DBC2B2 /* NEAInteractor.swift */; };
@@ -31,13 +30,6 @@
 			remoteGlobalIDString = 17F7018B259733F300DBC2B2;
 			remoteInfo = "Singapore Breathe";
 		};
-		17F701A9259733F400DBC2B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 17F70184259733F300DBC2B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17F7018B259733F300DBC2B2;
-			remoteInfo = "Singapore Breathe";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +42,6 @@
 		17F7019D259733F400DBC2B2 /* Singapore BreatheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Singapore BreatheTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F701A1259733F400DBC2B2 /* Singapore_BreatheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_BreatheTests.swift; sourceTree = "<group>"; };
 		17F701A3259733F400DBC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17F701A8259733F400DBC2B2 /* Singapore BreatheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Singapore BreatheUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_BreatheUITests.swift; sourceTree = "<group>"; };
-		17F701AE259733F400DBC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F701C12597360500DBC2B2 /* APINotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = APINotes.md; sourceTree = "<group>"; };
 		17F701C3259737BA00DBC2B2 /* PSIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIModel.swift; sourceTree = "<group>"; };
 		17F701CE2597384600DBC2B2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -80,13 +69,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17F701A5259733F400DBC2B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,7 +80,6 @@
 				17F70226259778CE00DBC2B2 /* Generated */,
 				17F7018E259733F300DBC2B2 /* Singapore Breathe */,
 				17F701A0259733F400DBC2B2 /* Singapore BreatheTests */,
-				17F701AB259733F400DBC2B2 /* Singapore BreatheUITests */,
 				17F7018D259733F300DBC2B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,7 +89,6 @@
 			children = (
 				17F7018C259733F300DBC2B2 /* Singapore Breathe.app */,
 				17F7019D259733F400DBC2B2 /* Singapore BreatheTests.xctest */,
-				17F701A8259733F400DBC2B2 /* Singapore BreatheUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,15 +121,6 @@
 				17F701A3259733F400DBC2B2 /* Info.plist */,
 			);
 			path = "Singapore BreatheTests";
-			sourceTree = "<group>";
-		};
-		17F701AB259733F400DBC2B2 /* Singapore BreatheUITests */ = {
-			isa = PBXGroup;
-			children = (
-				17F701AC259733F400DBC2B2 /* Singapore_BreatheUITests.swift */,
-				17F701AE259733F400DBC2B2 /* Info.plist */,
-			);
-			path = "Singapore BreatheUITests";
 			sourceTree = "<group>";
 		};
 		17F701C0259735ED00DBC2B2 /* Notes */ = {
@@ -269,24 +240,6 @@
 			productReference = 17F7019D259733F400DBC2B2 /* Singapore BreatheTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		17F701A7259733F400DBC2B2 /* Singapore BreatheUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 17F701B7259733F400DBC2B2 /* Build configuration list for PBXNativeTarget "Singapore BreatheUITests" */;
-			buildPhases = (
-				17F701A4259733F400DBC2B2 /* Sources */,
-				17F701A5259733F400DBC2B2 /* Frameworks */,
-				17F701A6259733F400DBC2B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				17F701AA259733F400DBC2B2 /* PBXTargetDependency */,
-			);
-			name = "Singapore BreatheUITests";
-			productName = "Singapore BreatheUITests";
-			productReference = 17F701A8259733F400DBC2B2 /* Singapore BreatheUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -300,10 +253,6 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					17F7019C259733F400DBC2B2 = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = 17F7018B259733F300DBC2B2;
-					};
-					17F701A7259733F400DBC2B2 = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 17F7018B259733F300DBC2B2;
 					};
@@ -324,7 +273,6 @@
 			targets = (
 				17F7018B259733F300DBC2B2 /* Singapore Breathe */,
 				17F7019C259733F400DBC2B2 /* Singapore BreatheTests */,
-				17F701A7259733F400DBC2B2 /* Singapore BreatheUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,13 +289,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		17F7019B259733F400DBC2B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17F701A6259733F400DBC2B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,14 +343,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17F701A4259733F400DBC2B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17F701AD259733F400DBC2B2 /* Singapore_BreatheUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -417,11 +350,6 @@
 			isa = PBXTargetDependency;
 			target = 17F7018B259733F300DBC2B2 /* Singapore Breathe */;
 			targetProxy = 17F7019E259733F400DBC2B2 /* PBXContainerItemProxy */;
-		};
-		17F701AA259733F400DBC2B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17F7018B259733F300DBC2B2 /* Singapore Breathe */;
-			targetProxy = 17F701A9259733F400DBC2B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -641,46 +569,6 @@
 			};
 			name = Release;
 		};
-		17F701B8259733F400DBC2B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQLBNX3GP7;
-				INFOPLIST_FILE = "Singapore BreatheUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stuartbreckenridge.Singapore-BreatheUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Singapore Breathe";
-			};
-			name = Debug;
-		};
-		17F701B9259733F400DBC2B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FQLBNX3GP7;
-				INFOPLIST_FILE = "Singapore BreatheUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stuartbreckenridge.Singapore-BreatheUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Singapore Breathe";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -707,15 +595,6 @@
 			buildConfigurations = (
 				17F701B5259733F400DBC2B2 /* Debug */,
 				17F701B6259733F400DBC2B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		17F701B7259733F400DBC2B2 /* Build configuration list for PBXNativeTarget "Singapore BreatheUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17F701B8259733F400DBC2B2 /* Debug */,
-				17F701B9259733F400DBC2B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
