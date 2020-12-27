@@ -27,22 +27,22 @@ public struct PSI: Codable {
         self.apiInfo = apiInfo
     }
     
-    subscript(dynamicMember member: String) -> Double {
+    subscript(dynamicMember member: String) -> Int? {
         switch member {
         case "north":
-            return items.first?.readings["psi_twenty_four_hourly"]?.north ?? 0.0
+            return Int(items.first?.readings["psi_twenty_four_hourly"]?.north ?? 0)
         case "east":
-            return items.first?.readings["psi_twenty_four_hourly"]?.east ?? 0.0
+            return Int(items.first?.readings["psi_twenty_four_hourly"]?.east ?? 0)
         case "south":
-            return items.first?.readings["psi_twenty_four_hourly"]?.south ?? 0.0
+            return Int(items.first?.readings["psi_twenty_four_hourly"]?.south ?? 0)
         case "west":
-            return items.first?.readings["psi_twenty_four_hourly"]?.west ?? 0.0
+            return Int(items.first?.readings["psi_twenty_four_hourly"]?.west ?? 0)
         case "central":
-            return items.first?.readings["psi_twenty_four_hourly"]?.central ?? 0.0
+            return Int(items.first?.readings["psi_twenty_four_hourly"]?.central ?? 0)
         case "national":
-            return items.first?.readings["psi_twenty_four_hourly"]?.national ?? 0.0
+            return Int(items.first?.readings["psi_twenty_four_hourly"]?.national ?? 0)
         default:
-            return 0.0
+            return nil
         }
     }
 }

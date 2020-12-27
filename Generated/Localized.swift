@@ -18,6 +18,10 @@ internal enum L10N {
   }
   /// API Error
   internal static let apiErrorTitle = L10N.tr("Localizable", "API_ERROR_TITLE")
+  /// PM
+  internal static let pmShort = L10N.tr("Localizable", "PM_SHORT")
+  /// PSI
+  internal static let psiShort = L10N.tr("Localizable", "PSI_SHORT")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

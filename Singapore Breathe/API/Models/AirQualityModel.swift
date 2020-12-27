@@ -17,7 +17,7 @@ public struct CombinedRegionMetadatum: Codable {
     public let name: String
     public let location: LabelLocation
     public let pm25Hourly: Int?
-    public let psiHourly: Double?
+    public let psiHourly: Int?
     public let timeStamp: String
     public let updatedTimeStamp: String
 }
