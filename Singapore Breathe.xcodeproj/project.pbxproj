@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17345C4F2598233C0088F464 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		17F7018C259733F300DBC2B2 /* Singapore Breathe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Singapore Breathe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7018F259733F300DBC2B2 /* Singapore_BreatheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_BreatheApp.swift; sourceTree = "<group>"; };
 		17F70191259733F300DBC2B2 /* AirQualityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityListView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		17F70183259733F300DBC2B2 = {
 			isa = PBXGroup;
 			children = (
+				17345C4F2598233C0088F464 /* README.md */,
 				17F701C0259735ED00DBC2B2 /* Notes */,
 				17F702192597786200DBC2B2 /* Localizations */,
 				17F70226259778CE00DBC2B2 /* Generated */,
