@@ -92,7 +92,7 @@ public struct Reading: Codable {
     }
 }
 
-// MARK: - RegionMetadatum (Shared between models)
+// MARK: - RegionMetadatum
 public struct RegionMetadatum: Codable {
     public let name: String?
     public let labelLocation: LabelLocation?
@@ -108,7 +108,7 @@ public struct RegionMetadatum: Codable {
     }
 }
 
-// MARK: - LabelLocation (Shared between models)
+// MARK: - LabelLocation
 public struct LabelLocation: Codable {
     public let latitude: Double
     public let longitude: Double

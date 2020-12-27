@@ -11,7 +11,7 @@ import SwiftUI
 struct SingaporeBreatheApp: App {
     var body: some Scene {
         WindowGroup {
-            AirQualityListView()
+            AirQualityMapView()
         }
     }
 }

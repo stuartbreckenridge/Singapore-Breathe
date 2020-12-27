@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1782AA7525988EBA007B3251 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782AA7425988EBA007B3251 /* Double+String.swift */; };
 		17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */; };
-		17F70192259733F300DBC2B2 /* AirQualityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70191259733F300DBC2B2 /* AirQualityListView.swift */; };
+		17F70192259733F300DBC2B2 /* AirQualityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70191259733F300DBC2B2 /* AirQualityMapView.swift */; };
 		17F70194259733F400DBC2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70193259733F400DBC2B2 /* Assets.xcassets */; };
 		17F70197259733F400DBC2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70196259733F400DBC2B2 /* Preview Assets.xcassets */; };
 		17F701A2259733F400DBC2B2 /* Singapore_BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701A1259733F400DBC2B2 /* Singapore_BreatheTests.swift */; };
@@ -19,7 +20,6 @@
 		17F7020C2597778300DBC2B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F7020E2597778300DBC2B2 /* Localizable.strings */; };
 		17F70228259778E500DBC2B2 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70227259778E500DBC2B2 /* Localized.swift */; };
 		17F7024F2597F10600DBC2B2 /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7024E2597F10600DBC2B2 /* AirQualityViewModel.swift */; };
-		17F702542597F20500DBC2B2 /* AirQualityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F702532597F20500DBC2B2 /* AirQualityItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +35,10 @@
 /* Begin PBXFileReference section */
 		17345C4F2598233C0088F464 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1782AA7225987F9C007B3251 /* AirQualityMeasurementNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AirQualityMeasurementNotes.md; sourceTree = "<group>"; };
+		1782AA7425988EBA007B3251 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		17F7018C259733F300DBC2B2 /* Singapore Breathe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Singapore Breathe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingaporeBreatheApp.swift; sourceTree = "<group>"; };
-		17F70191259733F300DBC2B2 /* AirQualityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityListView.swift; sourceTree = "<group>"; };
+		17F70191259733F300DBC2B2 /* AirQualityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityMapView.swift; sourceTree = "<group>"; };
 		17F70193259733F400DBC2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F70196259733F400DBC2B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17F70198259733F400DBC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		17F70227259778E500DBC2B2 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		17F7023E2597957400DBC2B2 /* LocalizationNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LocalizationNotes.md; sourceTree = "<group>"; };
 		17F7024E2597F10600DBC2B2 /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
-		17F702532597F20500DBC2B2 /* AirQualityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1782AA7325988EA2007B3251 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1782AA782598908B007B3251 /* Double */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		1782AA782598908B007B3251 /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				1782AA7425988EBA007B3251 /* Double+String.swift */,
+			);
+			path = Double;
+			sourceTree = "<group>";
+		};
 		17F70183259733F300DBC2B2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +98,7 @@
 				17F702192597786200DBC2B2 /* Localizations */,
 				17F70226259778CE00DBC2B2 /* Generated */,
 				17F7018E259733F300DBC2B2 /* Singapore Breathe */,
+				1782AA7325988EA2007B3251 /* Shared */,
 				17F701A0259733F400DBC2B2 /* Singapore BreatheTests */,
 				17F7018D259733F300DBC2B2 /* Products */,
 			);
@@ -199,8 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				17F7024E2597F10600DBC2B2 /* AirQualityViewModel.swift */,
-				17F70191259733F300DBC2B2 /* AirQualityListView.swift */,
-				17F702532597F20500DBC2B2 /* AirQualityItemView.swift */,
+				17F70191259733F300DBC2B2 /* AirQualityMapView.swift */,
 			);
 			path = "Air Quality";
 			sourceTree = "<group>";
@@ -328,11 +344,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F701DC25976E2D00DBC2B2 /* APIInteractor.swift in Sources */,
-				17F70192259733F300DBC2B2 /* AirQualityListView.swift in Sources */,
+				17F70192259733F300DBC2B2 /* AirQualityMapView.swift in Sources */,
 				17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */,
+				1782AA7525988EBA007B3251 /* Double+String.swift in Sources */,
 				17F70228259778E500DBC2B2 /* Localized.swift in Sources */,
 				17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */,
-				17F702542597F20500DBC2B2 /* AirQualityItemView.swift in Sources */,
 				17F701F12597764200DBC2B2 /* APIError.swift in Sources */,
 				17F7024F2597F10600DBC2B2 /* AirQualityViewModel.swift in Sources */,
 				17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */,

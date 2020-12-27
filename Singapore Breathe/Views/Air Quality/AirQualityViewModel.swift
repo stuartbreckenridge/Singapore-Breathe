@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import MapKit
 
 public final class AirQualityViewModel: ObservableObject {
     

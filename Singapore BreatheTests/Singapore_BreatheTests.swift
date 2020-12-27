@@ -88,5 +88,12 @@ class Singapore_BreatheTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func testDoubleDisplayString() {
+        let double1 = 27.0
+        let double2 = 28.5
+        XCTAssert(double1.displayString.count == 2)
+        XCTAssert(double2.displayString.count == 4)
+    }
+    
 
 }
