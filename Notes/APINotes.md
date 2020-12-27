@@ -1,10 +1,8 @@
 # NEA APIs
 
-There are two APIs that are required for: Polluntant Standards Index (PSI) and PM2.5. No authentication is needed.
+There are two APIs that are required: Polluntant Standards Index (PSI) and PM2.5. No authentication is needed.
 
 ## Polluntant Standards Index
-
-Use the 24-hour PSI rating for next day activities.
 
 Request: `GET https://api.data.gov.sg/v1/environment/psi`
 
@@ -168,8 +166,6 @@ Response:
 
 ## PM2.5 
 
-Use the 1-hour PM2.5 rating for immediate activities.
-
 Request `GET https://api.data.gov.sg/v1/environment/pm25`
 
 Response
@@ -234,17 +230,3 @@ Response
 }
 ```
 
-## PSI Bands
-
-- Good (0 - 50)
-- Moderate (51 - 100)
-- Unhealthy (101 - 200)
-- Very Unhealthy (201 - 300)
-- Hazardous (>= 301)
-
-## PM2.5 Bands
-
-- Band 1 (NORMAL) - 0-55
-- Band 2 (ELEVATED) - 56 - 150
-- Band 3 (HIGH) - 151 - 250
-- Band 4 (VERY HIGH) - >= 251
