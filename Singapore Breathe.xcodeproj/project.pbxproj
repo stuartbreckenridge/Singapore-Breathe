@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1782AA7525988EBA007B3251 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782AA7425988EBA007B3251 /* Double+String.swift */; };
 		17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */; };
-		17F70192259733F300DBC2B2 /* AirQualityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70191259733F300DBC2B2 /* AirQualityMapView.swift */; };
+		17F70192259733F300DBC2B2 /* PSIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70191259733F300DBC2B2 /* PSIMapView.swift */; };
 		17F70194259733F400DBC2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70193259733F400DBC2B2 /* Assets.xcassets */; };
 		17F70197259733F400DBC2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F70196259733F400DBC2B2 /* Preview Assets.xcassets */; };
 		17F701A2259733F400DBC2B2 /* Singapore_BreatheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701A1259733F400DBC2B2 /* Singapore_BreatheTests.swift */; };
@@ -19,7 +19,13 @@
 		17F701F12597764200DBC2B2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F701F02597764200DBC2B2 /* APIError.swift */; };
 		17F7020C2597778300DBC2B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F7020E2597778300DBC2B2 /* Localizable.strings */; };
 		17F70228259778E500DBC2B2 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70227259778E500DBC2B2 /* Localized.swift */; };
-		17F7024F2597F10600DBC2B2 /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7024E2597F10600DBC2B2 /* AirQualityViewModel.swift */; };
+		17F7024F2597F10600DBC2B2 /* PSIMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7024E2597F10600DBC2B2 /* PSIMapViewModel.swift */; };
+		DF39CA612599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF39CA5F2599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld */; };
+		DF39CA892599F46B00248B61 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39CA882599F46B00248B61 /* Persistence.swift */; };
+		DF9A4D7D259C576B0027D5AA /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D7C259C576B0027D5AA /* Date+Helpers.swift */; };
+		DF9A4D85259C5CFB0027D5AA /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D84259C5CFB0027D5AA /* VisualEffectView.swift */; };
+		DF9A4D8F259C68990027D5AA /* PSIMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D8E259C68990027D5AA /* PSIMapAnnotation.swift */; };
+		DF9A4D93259C68B30027D5AA /* PSIDetailsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D92259C68B30027D5AA /* PSIDetailsCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,7 @@
 		1782AA7425988EBA007B3251 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		17F7018C259733F300DBC2B2 /* Singapore Breathe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Singapore Breathe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingaporeBreatheApp.swift; sourceTree = "<group>"; };
-		17F70191259733F300DBC2B2 /* AirQualityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityMapView.swift; sourceTree = "<group>"; };
+		17F70191259733F300DBC2B2 /* PSIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapView.swift; sourceTree = "<group>"; };
 		17F70193259733F400DBC2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F70196259733F400DBC2B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17F70198259733F400DBC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +59,13 @@
 		17F7020D2597778300DBC2B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		17F70227259778E500DBC2B2 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		17F7023E2597957400DBC2B2 /* LocalizationNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LocalizationNotes.md; sourceTree = "<group>"; };
-		17F7024E2597F10600DBC2B2 /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
+		17F7024E2597F10600DBC2B2 /* PSIMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapViewModel.swift; sourceTree = "<group>"; };
+		DF39CA602599F1C700248B61 /* SingaporeBreatheModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SingaporeBreatheModel.xcdatamodel; sourceTree = "<group>"; };
+		DF39CA882599F46B00248B61 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DF9A4D7C259C576B0027D5AA /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
+		DF9A4D84259C5CFB0027D5AA /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		DF9A4D8E259C68990027D5AA /* PSIMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapAnnotation.swift; sourceTree = "<group>"; };
+		DF9A4D92259C68B30027D5AA /* PSIDetailsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIDetailsCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +89,9 @@
 		1782AA7325988EA2007B3251 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DF9A4D83259C5C8F0027D5AA /* Visual Effect View */,
 				1782AA782598908B007B3251 /* Double */,
+				DF9A4D80259C57730027D5AA /* Date */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */,
+				DF39CA642599F1CB00248B61 /* Data */,
 				17F701C2259736F900DBC2B2 /* API */,
 				17F702432597F0CB00DBC2B2 /* Views */,
 				17F70193259733F400DBC2B2 /* Assets.xcassets */,
@@ -207,18 +222,45 @@
 		17F702432597F0CB00DBC2B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				17F7024A2597F0EC00DBC2B2 /* Air Quality */,
+				17F7024A2597F0EC00DBC2B2 /* PSI Map */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		17F7024A2597F0EC00DBC2B2 /* Air Quality */ = {
+		17F7024A2597F0EC00DBC2B2 /* PSI Map */ = {
 			isa = PBXGroup;
 			children = (
-				17F7024E2597F10600DBC2B2 /* AirQualityViewModel.swift */,
-				17F70191259733F300DBC2B2 /* AirQualityMapView.swift */,
+				17F7024E2597F10600DBC2B2 /* PSIMapViewModel.swift */,
+				17F70191259733F300DBC2B2 /* PSIMapView.swift */,
+				DF9A4D8E259C68990027D5AA /* PSIMapAnnotation.swift */,
+				DF9A4D92259C68B30027D5AA /* PSIDetailsCardView.swift */,
 			);
-			path = "Air Quality";
+			path = "PSI Map";
+			sourceTree = "<group>";
+		};
+		DF39CA642599F1CB00248B61 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DF39CA5F2599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld */,
+				DF39CA882599F46B00248B61 /* Persistence.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DF9A4D80259C57730027D5AA /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A4D7C259C576B0027D5AA /* Date+Helpers.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		DF9A4D83259C5C8F0027D5AA /* Visual Effect View */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A4D84259C5CFB0027D5AA /* VisualEffectView.swift */,
+			);
+			path = "Visual Effect View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,14 +385,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9A4D8F259C68990027D5AA /* PSIMapAnnotation.swift in Sources */,
+				DF39CA892599F46B00248B61 /* Persistence.swift in Sources */,
+				DF9A4D7D259C576B0027D5AA /* Date+Helpers.swift in Sources */,
 				17F701DC25976E2D00DBC2B2 /* APIInteractor.swift in Sources */,
-				17F70192259733F300DBC2B2 /* AirQualityMapView.swift in Sources */,
+				17F70192259733F300DBC2B2 /* PSIMapView.swift in Sources */,
+				DF39CA612599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld in Sources */,
 				17F701C4259737BA00DBC2B2 /* PSIModel.swift in Sources */,
 				1782AA7525988EBA007B3251 /* Double+String.swift in Sources */,
 				17F70228259778E500DBC2B2 /* Localized.swift in Sources */,
 				17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */,
 				17F701F12597764200DBC2B2 /* APIError.swift in Sources */,
-				17F7024F2597F10600DBC2B2 /* AirQualityViewModel.swift in Sources */,
+				17F7024F2597F10600DBC2B2 /* PSIMapViewModel.swift in Sources */,
+				DF9A4D93259C68B30027D5AA /* PSIDetailsCardView.swift in Sources */,
+				DF9A4D85259C5CFB0027D5AA /* VisualEffectView.swift in Sources */,
 				17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +668,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF39CA5F2599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF39CA602599F1C700248B61 /* SingaporeBreatheModel.xcdatamodel */,
+			);
+			currentVersion = DF39CA602599F1C700248B61 /* SingaporeBreatheModel.xcdatamodel */;
+			path = SingaporeBreatheModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 17F70184259733F300DBC2B2 /* Project object */;
 }

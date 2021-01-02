@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SingaporeBreatheApp: App {
+    
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
-            AirQualityMapView()
+            PSIMapView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
