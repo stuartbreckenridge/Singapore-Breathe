@@ -27,26 +27,6 @@ struct PSIMapAnnotation: View {
             Text(psiAnnotationData.psi_twenty_four_hourly.displayString)
                 .foregroundColor(.white)
                 .font(.caption).bold()
-        }.padding(4).background(psiColorCode())
-    }
-    
-    func psiColorCode() -> Color {
-        
-        switch psiAnnotationData.psi_twenty_four_hourly {
-        case 0...50:
-            return Color("psiGood")
-        case 51...100:
-            return Color("psiModerate")
-        case 101...200:
-            return Color("psiUnhealthy")
-        case 201...300:
-            return Color("psiVeryUnhealthy")
-        case 301...Double.greatestFiniteMagnitude:
-            return Color("psiHazardous")
-        default:
-            return Color("psiGood")
-        }
-    }
-    
-    
+        }.padding(4).background(Color.psiColor(value: psiAnnotationData.psi_twenty_four_hourly))
+    }    
 }

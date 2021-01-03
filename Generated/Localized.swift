@@ -20,10 +20,24 @@ internal enum L10N {
   }
   /// API Error
   internal static let apiErrorTitle = L10N.tr("Localizable", "API_ERROR_TITLE")
+  /// Fine Particulate Matter
+  internal static let pmFineLong = L10N.tr("Localizable", "PM_FINE_LONG")
+  /// Particulate Matter
+  internal static let pmLong = L10N.tr("Localizable", "PM_LONG")
   /// PM
   internal static let pmShort = L10N.tr("Localizable", "PM_SHORT")
+  /// Pollutant Standards Index
+  internal static let psiLong = L10N.tr("Localizable", "PSI_LONG")
   /// PSI
   internal static let psiShort = L10N.tr("Localizable", "PSI_SHORT")
+  /// 24-Hourly
+  internal static let time24 = L10N.tr("Localizable", "TIME_24")
+  /// 8-Hourly
+  internal static let time8 = L10N.tr("Localizable", "TIME_8")
+  /// Hourly
+  internal static let timeHourly = L10N.tr("Localizable", "TIME_HOURLY")
+  /// 1-Hour Max
+  internal static let timeOneMax = L10N.tr("Localizable", "TIME_ONE_MAX")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

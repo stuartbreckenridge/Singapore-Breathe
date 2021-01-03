@@ -7,42 +7,65 @@
 
 import SwiftUI
 import MapKit
+import CoreData
 
 struct PSIMapView: View {
     
     @StateObject private var model = PSIMapViewModel()
     @State private var singaporeRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 1.3521, longitude: 103.8198), latitudinalMeters: 50000, longitudinalMeters: 50000)
     
+    @FetchRequest(entity: RegionalAQM.entity(), sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: true)], predicate: NSPredicate(format: "region != %@", "national"), animation: nil)
+    var readings: FetchedResults<RegionalAQM>
+    
     @ViewBuilder
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $singaporeRegion, annotationItems: model.latestPSIData, annotationContent: { psiReading in
-                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: psiReading.location.latitude, longitude: psiReading.location.longitude), content: {
-                    PSIMapAnnotation(psiAnnotationData: psiReading)
-                        .onTapGesture {
-                            model.selectedPSIAnnotationData = psiReading
-                        }
+            Map(coordinateRegion: $singaporeRegion, annotationItems: readings.prefix(5), annotationContent: { psiReading in
+                
+                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: psiReading.latitude, longitude: psiReading.longitude), content: {
+                    PSIMapAnnotation(psiAnnotationData: aqmAsPSIData(aqm: psiReading)).onTapGesture {
+                        model.selectedPSIAnnotationData = aqmAsPSIData(aqm: psiReading)
+                    }
                 })
+                
+                
+                
+//                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: psiReading.location.latitude, longitude: psiReading.location.longitude), content: {
+//                    PSIMapAnnotation(psiAnnotationData: psiReading)
+//                        .onTapGesture {
+//                            model.selectedPSIAnnotationData = psiReading
+//                        }
+//                })
+                
             })
-            VStack {
-                Spacer()
-                PSIDetailsCardView(psiData: model.selectedPSIAnnotationData, showCard: $model.showPSICard)
-                    .background(VisualEffectBlur(blurStyle: .prominent))
-                    .cornerRadius(30)
-                    .padding(.horizontal, 4)
-                    .scaleEffect(x: model.showPSICard ? 1.0 : 0, y: model.showPSICard ? 1.0 : 0, anchor: .bottom)
-                    .animation(.spring(response: 0.6, dampingFraction: 0.9, blendDuration: 0))
-            }
-            .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
-            
-            
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear{
             model.api.getLatestMetadataReading()
-        }.sheet(isPresented: $model.showDetailsSheet, content: {
-            Text("")
+        }
+        .sheet(isPresented: $model.showPSICard, content: {
+            PSIDetailsCardView(psiData: model.selectedPSIAnnotationData)
         })
+    }
+    
+    func aqmAsPSIData(aqm: RegionalAQM) -> PSIAnnotationData {
+        PSIAnnotationData(name: aqm.region!.capitalized,
+                          location: LabelLocation(latitude: aqm.latitude, longitude: aqm.longitude),
+                          timestamp: aqm.timestamp!,
+                          updatedTimestamp: aqm.updatedTimestamp!,
+                          co_eight_hour_max: aqm.co_eight_hour_max,
+                          co_sub_index: aqm.co_sub_index,
+                          no2_one_hour_max: aqm.no2_one_hour_max,
+                          o3_eight_hour_max: aqm.o3_eight_hour_max,
+                          o3_sub_index: aqm.o3_sub_index,
+                          pm10_sub_index: aqm.pm10_sub_index,
+                          pm10_twenty_four_hourly: aqm.pm10_twenty_four_hourly,
+                          pm25_one_hourly: aqm.pm25_one_hourly,
+                          pm25_sub_index: aqm.pm25_sub_index,
+                          pm25_twenty_four_hourly: aqm.pm25_twenty_four_hourly,
+                          psi_twenty_four_hourly: aqm.psi_twenty_four_hourly,
+                          so2_sub_index: aqm.so2_sub_index,
+                          so2_twenty_four_hourly: aqm.so2_twenty_four_hourly)
     }
 }
 

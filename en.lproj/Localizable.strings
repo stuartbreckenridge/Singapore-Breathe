@@ -12,4 +12,14 @@
 "API_ERROR_DISMISS" = "Dismiss";
 
 "PSI_SHORT" = "PSI";
+"PSI_LONG" = "Pollutant Standards Index";
+
 "PM_SHORT" = "PM";
+"PM_LONG" = "Particulate Matter";
+"PM_FINE_LONG" = "Fine Particulate Matter";
+
+"TIME_HOURLY" = "Hourly";
+"TIME_24" = "24-Hourly";
+"TIME_8" = "8-Hourly";
+"TIME_ONE_MAX" = "1-Hour Max";
+

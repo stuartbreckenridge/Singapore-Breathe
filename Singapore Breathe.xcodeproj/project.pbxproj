@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170A08D725A1EEAA00C2CC7D /* Color+Ratings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A08D625A1EEAA00C2CC7D /* Color+Ratings.swift */; };
 		1782AA7525988EBA007B3251 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782AA7425988EBA007B3251 /* Double+String.swift */; };
 		17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */; };
 		17F70192259733F300DBC2B2 /* PSIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F70191259733F300DBC2B2 /* PSIMapView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170A08D625A1EEAA00C2CC7D /* Color+Ratings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ratings.swift"; sourceTree = "<group>"; };
 		17345C4F2598233C0088F464 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1782AA7225987F9C007B3251 /* AirQualityMeasurementNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AirQualityMeasurementNotes.md; sourceTree = "<group>"; };
 		1782AA7425988EBA007B3251 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
@@ -86,12 +88,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		170A08DA25A1F4E700C2CC7D /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				170A08D625A1EEAA00C2CC7D /* Color+Ratings.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		1782AA7325988EA2007B3251 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				DF9A4D83259C5C8F0027D5AA /* Visual Effect View */,
 				1782AA782598908B007B3251 /* Double */,
 				DF9A4D80259C57730027D5AA /* Date */,
+				170A08DA25A1F4E700C2CC7D /* Color */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -385,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170A08D725A1EEAA00C2CC7D /* Color+Ratings.swift in Sources */,
 				DF9A4D8F259C68990027D5AA /* PSIMapAnnotation.swift in Sources */,
 				DF39CA892599F46B00248B61 /* Persistence.swift in Sources */,
 				DF9A4D7D259C576B0027D5AA /* Date+Helpers.swift in Sources */,

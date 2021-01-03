@@ -11,7 +11,7 @@ import CoreLocation
 
 public final class APIInteractor: ObservableObject {
     
-    @Published public private(set) var latestRegionalReadings = [RegionalAQM]()
+    //@Published public private(set) var latestRegionalReadings = [RegionalAQM]()
     @Published public private(set) var apiError: APIError? = nil
     
     public static let shared = APIInteractor()
@@ -96,6 +96,9 @@ public final class APIInteractor: ObservableObject {
     
     private func combineLatestData(_ psi: PSI, pm25: PSI) {
         
+        /* Create Regional Data */
+        let regions = psi.regionMetadata.compactMap { $0.name }
+        
         // Check there's data
         guard psi.items.count > 0,
               psi.items.first?.timestamp != nil,
@@ -105,9 +108,6 @@ public final class APIInteractor: ObservableObject {
               pm25.items.first?.updateTimestamp != nil else {
             return
         }
-        
-        /* Create Regional Data */
-        let regions = psi.regionMetadata.compactMap { $0.name }
         
         for region in regions {
             let aqm = RegionalAQM(context: PersistenceController.shared.container.viewContext)
@@ -226,42 +226,25 @@ public final class APIInteractor: ObservableObject {
                 }
             }
         }
-       
+        
         do {
             if PersistenceController.shared.container.viewContext.hasChanges {
                 try PersistenceController.shared.container.viewContext.save()
             }
-            
-            let activeRegions:[String] = regions.filter { $0 != "national" }
-            var latest:[RegionalAQM?] = []
-            
-            _ = activeRegions.map { r in
-                latest.append(PersistenceController.shared.latestReadingForRegion(r))
-            }
-            
-            latestRegionalReadings = latest.compactMap { $0 }
-            
         } catch {
-            print(error)
-            let activeRegions:[String] = regions.filter { $0 != "national" }
-            var latest:[RegionalAQM?] = []
-            
-            _ = activeRegions.map { r in
-                latest.append(PersistenceController.shared.latestReadingForRegion(r))
-            }
-            
-            latestRegionalReadings = latest.compactMap { $0 }
+            print(error.localizedDescription)
         }
-        
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
-        
     }
     
     public func currentDateTime() -> String {
+        #if DEBUG
+        return "2021-01-01T13:00:00" 
+        #else
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Singapore")
         return dateFormatter.string(from: Date())
+        #endif
     }
     
     public func apiDateStringToDate(_ dateString: String) -> Date {
