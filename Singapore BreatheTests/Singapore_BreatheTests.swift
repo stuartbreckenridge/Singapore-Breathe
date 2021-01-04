@@ -27,11 +27,11 @@ class Singapore_BreatheTests: XCTestCase {
         stack.deleteAllReadings()
         XCTAssert(stack.readingCount() == 0)
         api.getLatestMetadataReading()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
             XCTAssert(self.stack.readingCount() > 0)
             expectation.fulfill()
         })
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 13)
     }
     
     func testDoubleDisplayString() {
