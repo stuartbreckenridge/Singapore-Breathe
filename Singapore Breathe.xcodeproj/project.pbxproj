@@ -24,9 +24,8 @@
 		DF39CA612599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF39CA5F2599F1C700248B61 /* SingaporeBreatheModel.xcdatamodeld */; };
 		DF39CA892599F46B00248B61 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39CA882599F46B00248B61 /* Persistence.swift */; };
 		DF9A4D7D259C576B0027D5AA /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D7C259C576B0027D5AA /* Date+Helpers.swift */; };
-		DF9A4D85259C5CFB0027D5AA /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D84259C5CFB0027D5AA /* VisualEffectView.swift */; };
 		DF9A4D8F259C68990027D5AA /* PSIMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D8E259C68990027D5AA /* PSIMapAnnotation.swift */; };
-		DF9A4D93259C68B30027D5AA /* PSIDetailsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D92259C68B30027D5AA /* PSIDetailsCardView.swift */; };
+		DF9A4D93259C68B30027D5AA /* PSIDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A4D92259C68B30027D5AA /* PSIDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +64,8 @@
 		DF39CA602599F1C700248B61 /* SingaporeBreatheModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SingaporeBreatheModel.xcdatamodel; sourceTree = "<group>"; };
 		DF39CA882599F46B00248B61 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DF9A4D7C259C576B0027D5AA /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
-		DF9A4D84259C5CFB0027D5AA /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		DF9A4D8E259C68990027D5AA /* PSIMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapAnnotation.swift; sourceTree = "<group>"; };
-		DF9A4D92259C68B30027D5AA /* PSIDetailsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIDetailsCardView.swift; sourceTree = "<group>"; };
+		DF9A4D92259C68B30027D5AA /* PSIDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 		1782AA7325988EA2007B3251 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				DF9A4D83259C5C8F0027D5AA /* Visual Effect View */,
 				1782AA782598908B007B3251 /* Double */,
 				DF9A4D80259C57730027D5AA /* Date */,
 				170A08DA25A1F4E700C2CC7D /* Color */,
@@ -244,7 +241,7 @@
 				17F7024E2597F10600DBC2B2 /* PSIMapViewModel.swift */,
 				17F70191259733F300DBC2B2 /* PSIMapView.swift */,
 				DF9A4D8E259C68990027D5AA /* PSIMapAnnotation.swift */,
-				DF9A4D92259C68B30027D5AA /* PSIDetailsCardView.swift */,
+				DF9A4D92259C68B30027D5AA /* PSIDetailedView.swift */,
 			);
 			path = "PSI Map";
 			sourceTree = "<group>";
@@ -264,14 +261,6 @@
 				DF9A4D7C259C576B0027D5AA /* Date+Helpers.swift */,
 			);
 			path = Date;
-			sourceTree = "<group>";
-		};
-		DF9A4D83259C5C8F0027D5AA /* Visual Effect View */ = {
-			isa = PBXGroup;
-			children = (
-				DF9A4D84259C5CFB0027D5AA /* VisualEffectView.swift */,
-			);
-			path = "Visual Effect View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,8 +398,7 @@
 				17F701CF2597384600DBC2B2 /* Endpoints.swift in Sources */,
 				17F701F12597764200DBC2B2 /* APIError.swift in Sources */,
 				17F7024F2597F10600DBC2B2 /* PSIMapViewModel.swift in Sources */,
-				DF9A4D93259C68B30027D5AA /* PSIDetailsCardView.swift in Sources */,
-				DF9A4D85259C5CFB0027D5AA /* VisualEffectView.swift in Sources */,
+				DF9A4D93259C68B30027D5AA /* PSIDetailedView.swift in Sources */,
 				17F70190259733F300DBC2B2 /* SingaporeBreatheApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

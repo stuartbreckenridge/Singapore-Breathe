@@ -8,7 +8,6 @@
 import Foundation
 
 public extension Date {
-    
     func toString(timeStyle: DateFormatter.Style = .medium, dateStyle: DateFormatter.Style = .medium) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = timeStyle

@@ -7,35 +7,35 @@
 
 import Foundation
 import CoreData
+import os.log
 
-struct PersistenceController {
+class PersistenceController {
+    
     static let shared = PersistenceController()
-
+    
     let container: NSPersistentContainer
+    let log = OSLog(subsystem: "Application", category: "CoreData")
 
-    init(inMemory: Bool = false) {
+    private init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "SingaporeBreatheModel")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { [weak self] (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                Typical reasons for an error here include:
-                * The parent directory does not exist, cannot be created, or disallows writing.
-                * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                * The device is out of space.
-                * The store could not be migrated to the current model version.
-                Check the error message to determine what the actual problem was.
-                */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                os_log(.debug, log: self!.log, "%@", error.localizedDescription)
+            } else {
+                os_log(.debug, log: self!.log, "Persistent store loaded.")
             }
         })
         container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
     }
+    
+}
+
+
+// MARK: - Persistence Controller - Queries
+extension PersistenceController {
     
     public func latestReadingForRegion(_ region: String) -> RegionalAQM? {
         let fr: NSFetchRequest<RegionalAQM> = NSFetchRequest(entityName: "RegionalAQM")
@@ -44,6 +44,21 @@ struct PersistenceController {
         fr.predicate = predicate
         fr.sortDescriptors = [sort]
         return try? PersistenceController.shared.container.viewContext.fetch(fr).first
+    }
+    
+    public func deleteAllReadings() {
+        let fr: NSFetchRequest<RegionalAQM> = RegionalAQM.fetchRequest()
+        let readings = try! container.viewContext.fetch(fr)
+        for reading in readings {
+            container.viewContext.delete(reading)
+        }
+        try? container.viewContext.save()
+    }
+    
+    public func readingCount() -> Int {
+        let fr: NSFetchRequest<RegionalAQM> = RegionalAQM.fetchRequest()
+        let readings = try! container.viewContext.fetch(fr)
+        return readings.count
     }
     
 }

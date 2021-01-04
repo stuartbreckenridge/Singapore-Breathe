@@ -44,7 +44,7 @@ struct PSIMapView: View {
             model.api.getLatestMetadataReading()
         }
         .sheet(isPresented: $model.showPSICard, content: {
-            PSIDetailsCardView(psiData: model.selectedPSIAnnotationData)
+            PSIDetailedView(psiData: model.selectedPSIAnnotationData)
         })
     }
     

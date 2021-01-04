@@ -1,5 +1,5 @@
 //
-//  PSIDetailsCardView.swift
+//  PSIDetailedView.swift
 //  Singapore Breathe
 //
 //  Created by Stuart Breckenridge on 30/12/2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PSIDetailsCardView: View {
+struct PSIDetailedView: View {
     
     var psiData: PSIAnnotationData?
     @AppStorage("showDefinitions") private var showDefinitions: Bool = true
@@ -242,6 +242,6 @@ struct PSIDetailsCardView: View {
 
 struct PSIDetailsCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PSIDetailsCardView(psiData: PSIAnnotationData(name: "west", location: LabelLocation(latitude: 1.35735, longitude: 103.7), timestamp: Date(), updatedTimestamp: Date().addingTimeInterval(8), co_eight_hour_max: 10, co_sub_index: 10, no2_one_hour_max: 10, o3_eight_hour_max: 10, o3_sub_index: 10, pm10_sub_index: 10, pm10_twenty_four_hourly: 10, pm25_one_hourly: 10, pm25_sub_index: 10, pm25_twenty_four_hourly: 10, psi_twenty_four_hourly: 10, so2_sub_index: 10, so2_twenty_four_hourly: 10.23))
+        PSIDetailedView(psiData: PSIAnnotationData(name: "west", location: LabelLocation(latitude: 1.35735, longitude: 103.7), timestamp: Date(), updatedTimestamp: Date().addingTimeInterval(8), co_eight_hour_max: 10, co_sub_index: 10, no2_one_hour_max: 10, o3_eight_hour_max: 10, o3_sub_index: 10, pm10_sub_index: 10, pm10_twenty_four_hourly: 10, pm25_one_hourly: 10, pm25_sub_index: 10, pm25_twenty_four_hourly: 10, psi_twenty_four_hourly: 10, so2_sub_index: 10, so2_twenty_four_hourly: 10.23))
     }
 }
