@@ -40,8 +40,5 @@ class Singapore_BreatheTests: XCTestCase {
         XCTAssert(double1.displayString.count == 2)
         XCTAssert(double2.displayString.count == 4)
     }
-    
-    
-    
 
 }
