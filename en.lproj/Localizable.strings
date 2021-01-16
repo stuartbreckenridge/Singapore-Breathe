@@ -23,3 +23,15 @@
 "TIME_8" = "8-Hourly";
 "TIME_ONE_MAX" = "1-Hour Max";
 
+"GOOD" = "Good";
+"MODERATE" = "Moderate";
+"UNHEALTHY" = "Unhealthy";
+"VERY_UNHEALTHY" = "Very Unhealthy";
+"HAZARDOUS" = "Hazardous";
+
+"NORTH" = "North";
+"SOUTH" = "South";
+"EAST" = "East";
+"WEST" = "West";
+"CENTRAL" = "Central";
+"NATIONAL" = "National";

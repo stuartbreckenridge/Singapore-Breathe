@@ -18,6 +18,7 @@ struct PSIDetailedView: View {
             NavigationView {
                 List {
                     timestamp
+                    Section(header: colourCodingExplainer, content: {})
                     psiSection
                     fineParticulateMatter
                     particulateMatter
@@ -47,20 +48,58 @@ struct PSIDetailedView: View {
         } else {
             EmptyView()
         }
+    }
+    
+    
+    var colourCodingExplainer: some View {
+        
+        GeometryReader(content: { metrics in
+            LazyVGrid(columns: [
+                GridItem(.fixed(metrics.size.width/5), spacing: 0, alignment: .center),
+                GridItem(.fixed(metrics.size.width/5), spacing: 0, alignment: .center),
+                GridItem(.fixed(metrics.size.width/5), spacing: 0, alignment: .center),
+                GridItem(.fixed(metrics.size.width/5), spacing: 0, alignment: .center),
+                GridItem(.fixed(metrics.size.width/5), spacing: 0, alignment: .center),
+            ], content: {
+                ZStack {
+                    Rectangle().foregroundColor(Color("psiGood"))
+                    Text(L10N.good).foregroundColor(.white).font(Font.system(.caption2, design: .rounded)).bold()
+                }.frame(height: 50)
+                ZStack {
+                    Rectangle().foregroundColor(Color("psiModerate"))
+                    Text(L10N.moderate).foregroundColor(.white).font(Font.system(.caption2, design: .rounded)).bold()
+                }.frame(height: 50)
+                ZStack {
+                    Rectangle().foregroundColor(Color("psiUnhealthy"))
+                    Text(L10N.unhealthy).foregroundColor(.white).font(Font.system(.caption2, design: .rounded)).bold()
+                }.frame(height: 50)
+                ZStack {
+                    Rectangle().foregroundColor(Color("psiVeryUnhealthy"))
+                    Text(L10N.veryUnhealthy).foregroundColor(.white).font(Font.system(.caption2, design: .rounded)).bold()
+                }.frame(height: 50)
+                ZStack {
+                    Rectangle().foregroundColor(Color("psiHazardous"))
+                    Text(L10N.hazardous).foregroundColor(.white).font(Font.system(.caption2, design: .rounded)).bold()
+                }.frame(height: 50)
+            }).multilineTextAlignment(.center).cornerRadius(10)
+        })
+        
+        
         
     }
+    
     
     var timestamp: some View {
         Section(header: HStack {
             Spacer()
             Text(psiData!.timestamp.toString()).font(.caption).textCase(.none)
             Spacer()
-        }, content: {}).padding(.bottom, -8)
+        }, content: {}).padding(.bottom, -24)
     }
     
     @ViewBuilder
     var psiSection: some View {
-        Section(header: Text(L10N.psiLong).font(.title3).bold().textCase(.none).foregroundColor(.primary), content: {
+        Section(header: Text(L10N.psiLong).font(.title3).bold().textCase(.none).foregroundColor(.primary).padding(.top, 12), content: {
             HStack {
                 Text(L10N.psiShort).bold()
                 Spacer()

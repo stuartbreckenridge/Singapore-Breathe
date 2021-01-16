@@ -237,14 +237,10 @@ public final class APIInteractor: ObservableObject {
     }
     
     public func currentDateTime() -> String {
-        #if DEBUG
-        return "2021-01-01T13:00:00" 
-        #else
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Singapore")
         return dateFormatter.string(from: Date())
-        #endif
     }
     
     public func apiDateStringToDate(_ dateString: String) -> Date {

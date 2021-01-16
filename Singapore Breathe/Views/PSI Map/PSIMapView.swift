@@ -14,7 +14,7 @@ struct PSIMapView: View {
     @StateObject private var model = PSIMapViewModel()
     @State private var singaporeRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 1.3521, longitude: 103.8198), latitudinalMeters: 50000, longitudinalMeters: 50000)
     
-    @FetchRequest(entity: RegionalAQM.entity(), sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: true)], predicate: NSPredicate(format: "region != %@", "national"), animation: nil)
+    @FetchRequest(entity: RegionalAQM.entity(), sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)], predicate: NSPredicate(format: "region != %@", "national"), animation: nil)
     var readings: FetchedResults<RegionalAQM>
     
     @ViewBuilder
