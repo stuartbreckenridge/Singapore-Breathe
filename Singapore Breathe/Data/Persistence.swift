@@ -18,12 +18,13 @@ class PersistenceController {
 
     private init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "SingaporeBreatheModel")
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.stuartbreckenridge.sgbreathe")!.appendingPathComponent("database.sqlite"))]
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
         container.loadPersistentStores(completionHandler: { [weak self] (storeDescription, error) in
             if let error = error as NSError? {
-                os_log(.debug, log: self!.log, "%@", error.localizedDescription)
+                os_log(.error, log: self!.log, "%@", error.localizedDescription)
             } else {
                 os_log(.debug, log: self!.log, "Persistent store loaded.")
             }

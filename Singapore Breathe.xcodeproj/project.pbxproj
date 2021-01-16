@@ -41,6 +41,7 @@
 /* Begin PBXFileReference section */
 		170A08D625A1EEAA00C2CC7D /* Color+Ratings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ratings.swift"; sourceTree = "<group>"; };
 		17345C4F2598233C0088F464 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		176EFD2F25B2737A00C0D3E7 /* Singapore Breathe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Singapore Breathe.entitlements"; sourceTree = "<group>"; };
 		1782AA7225987F9C007B3251 /* AirQualityMeasurementNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AirQualityMeasurementNotes.md; sourceTree = "<group>"; };
 		1782AA7425988EBA007B3251 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		17F7018C259733F300DBC2B2 /* Singapore Breathe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Singapore Breathe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +139,7 @@
 		17F7018E259733F300DBC2B2 /* Singapore Breathe */ = {
 			isa = PBXGroup;
 			children = (
+				176EFD2F25B2737A00C0D3E7 /* Singapore Breathe.entitlements */,
 				17F7018F259733F300DBC2B2 /* SingaporeBreatheApp.swift */,
 				DF39CA642599F1CB00248B61 /* Data */,
 				17F701C2259736F900DBC2B2 /* API */,
@@ -554,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Singapore Breathe/Singapore Breathe.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Singapore Breathe/Preview Content\"";
 				DEVELOPMENT_TEAM = FQLBNX3GP7;
@@ -576,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Singapore Breathe/Singapore Breathe.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Singapore Breathe/Preview Content\"";
 				DEVELOPMENT_TEAM = FQLBNX3GP7;
